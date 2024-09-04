@@ -7,6 +7,7 @@ class EmailAuthorValidator < ActiveModel::EachValidator
   end
 
 class Post < ApplicationRecord
+    has_many :comments
     validates :title, :content, :author, :published, presence: true
     validates :content, length: {minimum: 140}
     validates :title, length: {maximum: 100}

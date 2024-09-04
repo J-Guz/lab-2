@@ -8,6 +8,8 @@ class EmailAuthorValidator < ActiveModel::EachValidator
   
 
 class Comment < ApplicationRecord
+    belongs_to :post
+
     validates :content, :author, presence: true
     validates :author, email_author: true
 end
