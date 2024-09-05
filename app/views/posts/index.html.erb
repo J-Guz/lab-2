@@ -1,0 +1,20 @@
+<div class="container">
+
+    <h1>Posts</h1>
+
+    <ul>
+        <% @posts.each do |post|%>
+        <%if post.published == "published"%>
+            <div class="card">
+                <h5 class="card-header"> <%=post.author%>  </h5>
+                <div class="card-body">
+                    <h5 class="card-title"> <%= post.title%> </h5>
+                    <p class="card-text"> <%= post.content %></p>
+                    <a href= <%= post_path(post)%> class="btn btn-primary">Ver mas</a>
+                </div>
+            </div>
+        <%end%>
+        <%end%>
+    </ul>
+
+</div>
